@@ -18,16 +18,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    echo 'Test Start...'
-                    bat '"%WORKSPACE%\\Utils\\run.bat"'
-                    echo 'Test End.'
-                }
-            }
-        }
-
         stage('Archive Artifacts') {
             steps {
                 archiveArtifacts artifacts: '**/*.exe', allowEmptyArchive: true
